@@ -1,0 +1,21 @@
+<form class="form">
+    <h1>Deletando Téncnico</h1>
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Nome</mat-label>
+        <input [(ngModel)]="tecnico.nome" disable maxlength="100" name="nome" matInput placeholder="Ex.linus turval">
+
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Cpf</mat-label>
+        <input [(ngModel)]="tecnico.cpf" disable maxlength="15" name="cpf" matInput placeholder="034.075.401-09">
+
+    </mat-form-field>
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>email</mat-label>
+        <input [(ngModel)]="tecnico.email" disable maxlength="18" name="email" matInput placeholder="(00)90000-0000">
+
+    </mat-form-field>
+    <button class="mat-elevation-z8" (click)="delete()" mat-stroked-button color="accent">Deletar</button>
+    <button class="mat-elevation-z8" (click)="cancel()" mat-stroked-button color="warn">Cancelar</button>
+</form>

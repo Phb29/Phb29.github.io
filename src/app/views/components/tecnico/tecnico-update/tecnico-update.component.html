@@ -1,0 +1,21 @@
+<form class="form">
+    <h1>Atualizando Téncnico</h1>
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Nome</mat-label>
+        <input [(ngModel)]="tecnico.nome" [formControl]="nome" required maxlength="100" name="nome" matInput placeholder="Ex.linus turval">
+        <mat-error *ngIf="nome.invalid"> {{errorvalidname()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Cpf</mat-label>
+        <input [(ngModel)]="tecnico.cpf" [formControl]="cpf" required maxlength="15" name="cpf" matInput placeholder="034.075.401-09">
+        <mat-error *ngIf="cpf.invalid"> {{ errorvalidcpf()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>email</mat-label>
+        <input [(ngModel)]="tecnico.email" [formControl]="email" required maxlength="18" name="email" matInput placeholder="(00)90000-0000">
+        <mat-error *ngIf="email.invalid"> {{errorvalidemail()}}</mat-error>
+    </mat-form-field>
+    <button class="mat-elevation-z8" (click)="update()" [disabled]="errorvalidname()||errorvalidcpf()||errorvalidemail()" mat-stroked-button color="accent">Atualizar</button>
+    <button class="mat-elevation-z8" (click)="cancel()" mat-stroked-button color="warn">Cancelar</button>
+</form>
